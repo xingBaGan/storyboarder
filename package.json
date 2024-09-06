@@ -12,6 +12,7 @@
     "start:language-preferences": "webpack --mode=development --watch --progress --config configs/language-preferences/webpack.config.js",
     "start:print-project": "webpack --mode=development --watch --progress --config configs/print-project/webpack.config.js",
     "start:server": "cd server && npm run start",
+    "start:electron-debug": "cross-env NODE_ENV=development --inspect=9229 electron .",
     "start:electron": "cross-env NODE_ENV=development electron .",
     "start": "npm-run-all --parallel start:*",
     "dist:mac": "npm run build && electron-builder build -m --arm64 --x64",

@@ -286,6 +286,7 @@
         "description": "如果板子是新镜头，请选中此框。 每个镜头可以有多个木板。 这样，您可以为镜头制作动画或进行过渡"
       },
       "duration": "持续时间",
+
       "duration-ms": {
         "title": "设置板持续时间-ms",
         "description": "输入木板的值（以毫秒为单位）。 一秒有1000毫秒。 默认为2000毫秒。"
@@ -302,6 +303,12 @@
       "dialogue-tooltip": {
         "title": "对话工具提示",
         "description": "写一些可爱的对话，例如“如你所知，我不是你的父亲！”如果启用，它将显示为字幕。"
+      },
+      "content-title": "内容",
+      "roles-title": "角色",
+      "content-tooltip": {
+        "title": "绘板内容",
+        "description": "写一些内容。"
       },
       "action-title": "行动",
       "action-tooltip": {

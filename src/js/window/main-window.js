@@ -189,6 +189,7 @@ const updateHTMLText = () => {
   translateHtml("#dialog-title", "main-window.board-information.dialog-title")
   translateTooltip("#suggested-dialogue-duration", "main-window.board-information.suggested-dialogue-duration")
   translateTooltip("#dialogue-tooltip", "main-window.board-information.dialogue-tooltip")
+  translateHtml("#content-title", "main-window.board-information.content-title")
   translateHtml("#action-title", "main-window.board-information.action-title")
   translateTooltip("#action-tooltip", "main-window.board-information.action-tooltip")
   translateHtml("#note-title", "main-window.board-information.note-title")
@@ -1128,6 +1129,9 @@ const loadBoardUI = async () => {
           break
         case 'dialogue':
           boardData.boards[currentBoard].dialogue = (e.target.value)
+          break
+        case 'content':
+          boardData.boards[currentBoard].content = (e.target.value)
           break
         case 'action':
           boardData.boards[currentBoard].action = (e.target.value)
@@ -2116,7 +2120,7 @@ const loadBoardUI = async () => {
 
   // for debugging:
   //
-  // remote.getCurrentWebContents().openDevTools()
+  remote.getCurrentWebContents().openDevTools()
 }
 
 
@@ -3719,6 +3723,11 @@ let renderMetaData = () => {
     suggestionDuration.innerHTML = "// about " + (duration/1000) + " seconds"
     suggestionDuration.dataset.duration = duration
   }
+
+  if (boardData.boards[currentBoard].content) {
+    document.querySelector('textarea[name="content"]').value = boardData.boards[currentBoard].content
+  }
+
   renderCaption()
 
   if (boardData.boards[currentBoard].action) {
@@ -4740,6 +4749,7 @@ let loadScene = async (sceneNumber) => {
 
           boardFilename = path.join(currentPath, foundDirectoryName, foundDirectoryName + '.storyboarder')
           boardData = JSON.parse(fs.readFileSync(boardFilename))
+          log.info( `[${sceneNumber}] boardData:`, boardData)
         }
 
         // update UI to reflect current scene node

@@ -148,6 +148,12 @@
         style="fill: var(--color2, #aeaeb0)"
         d="M22.715 20.151h-13.43c-0.005 0-0.011 0-0.017 0-0.601 0-1.089-0.488-1.089-1.089s0.488-1.089 1.089-1.089c0.006 0 0.012 0 0.018 0h13.429c0.005-0 0.011-0 0.017-0 0.601 0 1.089 0.488 1.089 1.089s-0.488 1.089-1.089 1.089c-0.006 0-0.012-0-0.018-0h0.001z"></path>
     </symbol>
+    <symbol id="icon-content" viewBox="0 0 32 32">
+      <title>content</title>
+      <path fill="#aeaeb0" style="fill: var(--color2, #aeaeb0)" d="M10.193 17.213h14.43v3.36h-14.43v-3.361z"></path>
+      <path fill="#c5c41d" style="fill: var(--color1, #c5c41d)" d="M10.193 7.528h14.43v1.581h-14.43v-1.581z"></path>
+      <path fill="#aeaeb0" style="fill: var(--color2, #aeaeb0)" d="M8.896 11.345h11.392c0.884 0 1.6 0.716 1.6 1.6v10.205c0 0.884-0.716 1.6-1.6 1.6h-11.392c-0.884 0-1.6-0.716-1.6-1.6v-10.205c0-0.884 0.716-1.6 1.6-1.6z"></path>
+    </symbol>
     <symbol id="icon-duplicate" viewBox="0 0 32 32">
       <title>duplicate</title>
       <path fill="#aeaeb0" style="fill: var(--color2, #aeaeb0)" d="M11.712 7.249h11.391c0.884 0 1.6 0.716 1.6 1.6v10.205c0 0.884-0.716 1.6-1.6 1.6h-11.392c-0.884 0-1.6-0.716-1.6-1.6v-10.205c0-0.884 0.716-1.6 1.6-1.6z"></path>
