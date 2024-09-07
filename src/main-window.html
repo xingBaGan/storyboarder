@@ -19,6 +19,7 @@
     <div id="drag-handle"></div>
     <div id="scenes"></div>
     <div id="script"></div>
+    <div id="conception"></div>
     <div id="storyboarder-main">
       <div id="toolbar">
         <div class="column">
@@ -325,7 +326,16 @@
               data-tooltip-title="Content for board"
               data-tooltip-description="Write some content for the board."
               data-tooltip-keys=""
-              data-tooltip-position="left middle"></textarea>
+              data-tooltip-position="left middle"
+              placeholder="Write some content for the board."></textarea>
+            </div>
+            <div class="row">
+              <div><svg class="smallicon"><use xlink:href="./img/symbol-defs.svg#icon-roles"></use></svg><span id="roles-title">Roles</span> <span id="suggested-dialogue-duration" data-tooltip
+                data-tooltip-title="Suggested board duration"
+                data-tooltip-description=""
+                data-tooltip-keys=""
+                data-tooltip-position="left middle"></span></div>
+              <div id="roles-select"></div>
             </div>
             <div class="row">
               <div><svg class="smallicon"><use xlink:href="./img/symbol-defs.svg#icon-dialogue"></use></svg><span id="dialog-title">Dialogue</span> <span id="suggested-dialogue-duration" data-tooltip
@@ -636,6 +646,7 @@
     if (typeof require !== 'undefined') {
    
       window.onerror = (message, source, lineno, colno, error) => require('electron').ipcRenderer.send('errorInWindow', message, source, lineno, colno, error)
+      require('../src/build/conception.js')
       require('./js/window/main-window')
     }
   </script>
