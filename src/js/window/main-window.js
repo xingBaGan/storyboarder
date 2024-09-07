@@ -441,6 +441,7 @@ const load = async (event, args) => {
   }
   initialize(path.join(app.getPath('userData'), 'storyboarder-settings.json'))
   remote.getCurrentWindow().on('resize', resizeScale)
+  // 加载页面设置store 中 data
   onBoardDataChange();
 }
 ipcRenderer.on('load', load)
@@ -1403,8 +1404,9 @@ const loadBoardUI = async () => {
     }
   }, true)
 
-  observeStore(storyStore, state => state.boardData, (boardData) => {
-    boardData = boardData;
+  observeStore(window?.storyStore, state => state.boardData, (_boardData) => {
+    boardData = _boardData;
+    markBoardFileDirty()
   });
 
   layersEditor = new LayersEditor(storyboarderSketchPane, sfx, notifications)
@@ -2324,7 +2326,6 @@ let markBoardFileDirty = () => {
   boardFileDirty = true
   clearTimeout(boardFileDirtyTimer)
   boardFileDirtyTimer = setTimeout(saveBoardFile, 5000)
-  onBoardDataChange()
 }
 
 let saveBoardFile = (opt = { force: false }) => {
