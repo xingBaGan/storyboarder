@@ -2,9 +2,26 @@
 @import '~antd/dist/antd.less';
 
 @ant-prefix: conception-antd;
+*, *::before, *::after {
+    box-sizing: initial;
+}
 
 body {
     background-color: #333333;
+}
+
+.conception-antd {
+    background-color: #333333;
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: initial;
+    }
+}
+
+.conception-bubble-button {
+    padding: 0;
 }
 
 div.conception-antd-drawer-body {

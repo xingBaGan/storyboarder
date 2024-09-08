@@ -1,13 +1,12 @@
-
 import { useSelector, useDispatch } from 'react-redux'
-import { Input, Table, Button, Tooltip } from 'antd'
+import { Input, Button } from 'antd'
 import { sendData } from '../../../services/api/novelService';
-import Text from '../../../../components/Text';
 import { useTranslation } from 'react-i18next';
 import { Collapse } from 'antd';
 import { DownOutlined } from '@ant-design/icons'
-import './index.scss'
 import { useState } from 'react'
+import { ShortTextsTable } from '../novelTable';
+import './index.scss'
 const { Panel } = Collapse;
 
 const ConceptionPanel = () => {
@@ -50,33 +49,13 @@ const ConceptionPanel = () => {
                         autoSize={{ minRows: 10, maxRows: 20 }}
                         value={boardData.originalText.replace(/\\n/g, '\n')}
                         onChange={(e) => {
-                            dispatch({ type: 'SET_ORIGINAL_TEXT', payload: e.target.value.replace(/\n/g, '\\n') })
+                            // 去掉换行符
+                            dispatch({ type: 'SET_ORIGINAL_TEXT', payload: e.target.value.replace(/\n/g, '') })
                         }}
                     />
                 </Panel>
                 <Panel header={t("conception.shortTexts")} key="2">
-                    <div>
-                        <Table
-                            dataSource={boardData.shortTexts.map((item, index) => ({
-                                key: index,
-                                shortText: item
-                            }))}
-                            columns={[{
-                                title: t("conceptionPanel.chunk"),
-                                dataIndex: 'shortText',
-                                key: 'shortText',
-                                ellipsis: {
-                                    showTitle: false,
-                                },
-                                render: shortText => (
-                                    <Tooltip placement="topLeft" title={shortText}>
-                                        {shortText}
-                                    </Tooltip>
-                                ),
-                                width: 300,
-                            }]}
-                        />
-                    </div>
+                    <ShortTextsTable shortTexts={boardData.shortTexts} />
                 </Panel>
             </Collapse>
         </div>

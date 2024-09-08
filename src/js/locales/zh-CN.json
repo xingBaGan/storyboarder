@@ -754,6 +754,10 @@
   },
   "conceptionPanel": {
     "chunk": "分镜原文",
-    "shortTexts": "可分镜短文列表"
+    "shortTexts": "可分镜短文列表",
+    "operation": "操作",
+    "edit": "编辑",
+    "sendToScene": "到单独分镜",
+    "sendAllToScene": "到所有分镜"
   }
 }

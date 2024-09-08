@@ -1,0 +1,9 @@
+body {
+  background-color: #333333;
+}
+div.conception-antd-drawer-body {
+  padding: 0;
+}
+.conception-antd-collapse-content > .conception-antd-collapse-content-box {
+  padding: 0;
+}

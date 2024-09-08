@@ -36,8 +36,45 @@ function rootReducer(state = initialState, action) {
         ...state,
         isLoading: action.payload
       }
+    case 'SET_SCENE_TEXT':
+      return setSceneText(state, action.payload)
+    case 'SET_ALL_SCENE_TEXT':
+      return setAllSceneText(state, action.payload)
     default:
       return state
+  }
+}
+function setSceneText(state, payload) {
+  const { index, shortText } = payload
+  const { boardData } = state
+  const boards = boardData.boards
+  if (boards[index]) {
+    boards[index].content = shortText
+  }
+  return {
+    ...state,
+    boardData: {
+      ...boardData,
+      boards: boards
+    }
+  }
+}
+function setAllSceneText(state, payload) {
+  const { shortTexts } = payload
+  const { boardData } = state
+  const boards = boardData.boards
+  if (boards.length) {
+    boards.forEach((board, index) => {
+      board.content = shortTexts[index]
+    })
+  }
+
+  return {
+    ...state,
+    boardData: {
+      ...boardData,
+      boards: boards
+    }
   }
 }
 // 创建store

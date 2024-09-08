@@ -17,18 +17,19 @@ const AppContent = () => {
   const { t } = useTranslation()
 
   return (
-    <ConfigProvider prefixCls="conception-antd">
+    <ConfigProvider prefixCls="conception-antd" className="conception-antd">
       <Button
         className='conception-bubble-button'
         shape="circle"
         icon={<RightCircleOutlined />}
         onClick={() => setDrawerVisible(true)}
-        style={{ position: 'absolute', left: '20px', top: '20px' }}
+        style={{ position: 'absolute'}}
       >
       </Button>
       <Drawer
         className='conception-drawer'
         title={t('conception.drawerTitle')}
+        width={800}
         placement="left"
         closable={false}
         onClose={() => setDrawerVisible(false)}
