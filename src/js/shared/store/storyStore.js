@@ -22,6 +22,14 @@ const initialState = {
             originalText: action.payload
           }
         }
+      case 'SET_SHORT_TEXTS':
+        return {
+          ...state,
+          boardData: {
+            ...state.boardData,
+            shortTexts: action.payload
+          }
+        }
       default:
         return state
     }

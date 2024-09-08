@@ -17,5 +17,8 @@
     "url": "https://github.com/wonderunit/drop.git"
   },
   "license": "MIT",
-  "main": "dist/js/drop.js"
+  "main": "dist/js/drop.js",
+  "dependencies": {
+    "tether-drop": "file:"
+  }
 }

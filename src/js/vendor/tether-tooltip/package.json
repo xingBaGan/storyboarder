@@ -17,5 +17,8 @@
     "url": "https://github.com/HubSpot/tooltip.git"
   },
   "license": "MIT",
-  "main": "dist/js/tooltip.js"
+  "main": "dist/js/tooltip.js",
+  "dependencies": {
+    "tether-tooltip": "file:"
+  }
 }

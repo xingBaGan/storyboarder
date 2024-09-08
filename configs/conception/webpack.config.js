@@ -36,7 +36,32 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+                modifyVars: {
+                  '@ant-prefix': 'conception-antd',
+                },
+              },
+            },
+          },
+        ],
+      },
     ]
   },
   node: {

@@ -4733,6 +4733,12 @@ const resize = () => {
 }
 
 window.onkeydown = (e) => {
+  // 获取光标的位置是否在conception-container 中
+  const conceptionContainer = document.querySelector('.conception-container')
+  const isConceptionContainer = conceptionContainer?.contains(e.target)
+  if (isConceptionContainer) {
+    return
+  }
   // if a key is pressed which is NOT the play key ...
   if (!isCommandPressed('menu:navigation:play')) {
     // ... halt playback
