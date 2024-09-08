@@ -1,0 +1,11 @@
+.conception-container {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+
+    .original-text-input {
+        textarea {
+            scrollbar-width: none;
+        }
+    }
+}

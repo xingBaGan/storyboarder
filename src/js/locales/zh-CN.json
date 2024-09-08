@@ -745,6 +745,15 @@
   },
   "conception": {
     "originalText": "原文",
+    "shortTexts": "可分镜短文列表",
+    "getChunks": "拆分为语句",
+    "drawerTitle": "故事预设",
+    "loading": "请求中，请稍候...",
+    "openDrawer": "打开抽屉",
+    "bubbleTitle": "气泡吸附按钮"
+  },
+  "conceptionPanel": {
+    "chunk": "分镜原文",
     "shortTexts": "可分镜短文列表"
   }
 }
