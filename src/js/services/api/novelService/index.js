@@ -9,3 +9,13 @@ export const sendData = async (content) => {
     throw error;
   }
 };
+
+export const generateImage = async (prompt) => {
+  try {
+    const response = await post('/generate_image', { prompt });
+    return response.data.base64_image;
+  } catch (error) {
+    console.error('Error sending data:', error);
+    throw error;
+  }
+};

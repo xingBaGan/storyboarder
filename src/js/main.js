@@ -29,6 +29,7 @@ const importerFinalDraft = require('./importers/final-draft')
 const xml2js = require('xml2js')
 
 const MobileServer = require('./express-app/app')
+const KritaWebSocketServer = require('./express-app/kritaWS')
 
 const preferencesUI = require('./windows/preferences')()
 const registration = require('./windows/registration/main')
@@ -287,6 +288,7 @@ app.on('ready', async () => {
   }
 
   appServer = new MobileServer()
+  kritaWebSocketServer = new KritaWebSocketServer()
   appServer.on('pointerEvent', (e)=> {
     log.info('pointerEvent')
   })

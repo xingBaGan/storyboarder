@@ -203,6 +203,7 @@
     "alchemancy": "github:wonderunit/alchemancy#38c4670",
     "antd": "^4.24.10",
     "archiver": "2.0.3",
+    "axios": "^1.3.4",
     "caf": "7.0.4",
     "callbag-basics": "^3.2.0",
     "callbag-drop-repeats": "^1.0.0",
@@ -230,6 +231,7 @@
     "i18next": "^19.5.4",
     "i18next-fs-backend": "^1.0.7",
     "i18next-http-backend": "^1.0.16",
+    "iconv-lite": "^0.6.3",
     "immer": "1.7.4",
     "infix-to-postfix": "0.0.3",
     "inherits": "^2.0.4",
@@ -295,7 +297,6 @@
     "ws": "6.1.2",
     "xml2js": "0.4.19",
     "xstate": "4.16.2",
-    "zustand": "1.0.4",
-    "axios": "^1.3.4"
+    "zustand": "1.0.4"
   }
 }

@@ -305,8 +305,8 @@ class AudioFileControlView {
                                     // '<span class="paren">)</span>' +
                                   '</span>'
 
-      audiofileSvgUseEl.setAttribute('xlink:href',
-        audiofileSvgUseEl.getAttribute('xlink:href')
+      audiofileSvgUseEl.setAttribute('href',
+        audiofileSvgUseEl.getAttribute('href')
           .split('#')[0] + '#icon-speaker-on')
 
       audiofileClearBtnEl.style.opacity = 1.0
@@ -319,8 +319,8 @@ class AudioFileControlView {
                                     'Select Audio File' +
                                     // '<span class="paren">)</span>' +
                                   '</span>'
-      audiofileSvgUseEl.setAttribute('xlink:href',
-        audiofileSvgUseEl.getAttribute('xlink:href')
+      audiofileSvgUseEl.setAttribute('href',
+        audiofileSvgUseEl.getAttribute('href')
           .split('#')[0] + '#icon-speaker-off')
 
       audiofileClearBtnEl.style.opacity = 0.5
