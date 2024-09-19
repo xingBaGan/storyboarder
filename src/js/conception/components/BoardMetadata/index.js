@@ -1,4 +1,12 @@
+import { generateBoardJson } from '../../../services/api/novelService/index'
+import { useSelector } from 'react-redux'
 const BoardMetadata = () => {
+    const getCategoryJSON = () => {
+        const boardData = document.querySelector('textarea[name="content"]').value
+        generateBoardJson(boardData).then(data => {
+            document.querySelector('textarea[name="boardJson"]').value = JSON.stringify(data, null, 2)
+        })
+    }
     return (
         <>
             <div className="board-metadata-container">
@@ -70,6 +78,40 @@ const BoardMetadata = () => {
                         data-tooltip-keys=""
                         data-tooltip-position="left middle"
                         placeholder="Write some content for the board."></textarea>
+                </div>
+                <div className="row">
+                    <div><svg className="smallicon"><use href="./img/symbol-defs.svg#icon-json"></use></svg><span id="json-title">Board JSON</span></div>
+                    <textarea 
+                        name="boardJson" 
+                        id="board-json-display"
+                        readOnly
+                        placeholder="Board JSON data will be displayed here"
+                    ></textarea>
+                </div>
+                <div className="row">
+                    <button onClick={getCategoryJSON} className="btn btn-primary">
+                        Get Category JSON
+                    </button>
+                </div>
+                <div className="row">
+                    <div><svg className="smallicon"><use href="./img/symbol-defs.svg#icon-positive"></use></svg><span id="positive-prompt-title">Positive Prompt</span></div>
+                    <textarea name="positivePrompt" data-tooltip
+                        id="positive-prompt-tooltip"
+                        data-tooltip-title="Positive prompt for board"
+                        data-tooltip-description="Write positive prompts for the board."
+                        data-tooltip-keys=""
+                        data-tooltip-position="left middle"
+                        placeholder="Enter positive prompts here"></textarea>
+                </div>
+                <div className="row">
+                    <div><svg className="smallicon"><use href="./img/symbol-defs.svg#icon-negative"></use></svg><span id="negative-prompt-title">Negative Prompt</span></div>
+                    <textarea name="negativePrompt" data-tooltip
+                        id="negative-prompt-tooltip"
+                        data-tooltip-title="Negative prompt for board"
+                        data-tooltip-description="Write negative prompts for the board."
+                        data-tooltip-keys=""
+                        data-tooltip-position="left middle"
+                        placeholder="Enter negative prompts here"></textarea>
                 </div>
                 <div className="row">
                     <div><svg className="smallicon"><use href="./img/symbol-defs.svg#icon-roles"></use></svg><span id="roles-title">Roles</span> <span id="suggested-dialogue-duration" data-tooltip

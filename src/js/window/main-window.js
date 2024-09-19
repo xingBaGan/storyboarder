@@ -1048,6 +1048,15 @@ const loadBoardUI = async () => {
         case 'notes':
           boardData.boards[currentBoard].notes = (e.target.value)
           break
+        case 'positivePrompt':
+          boardData.boards[currentBoard].positivePrompt = (e.target.value)
+          break
+        case 'negativePrompt':  
+          boardData.boards[currentBoard].negativePrompt = (e.target.value)
+          break
+        case 'boardJson':
+          boardData.boards[currentBoard].boardJson = (e.target.value)
+          break
       }
       markBoardFileDirty()
     })
@@ -3640,6 +3649,15 @@ let renderMetaData = () => {
 
   if (boardData.boards[currentBoard].content) {
     document.querySelector('textarea[name="content"]').value = boardData.boards[currentBoard].content
+  }
+  if (boardData.boards[currentBoard].positivePrompt) {
+    document.querySelector('textarea[name="positivePrompt"]').value = boardData.boards[currentBoard].positivePrompt
+  }
+  if (boardData.boards[currentBoard].negativePrompt) {
+    document.querySelector('textarea[name="negativePrompt"]').value = boardData.boards[currentBoard].negativePrompt
+  }
+  if (boardData.boards[currentBoard].boardJson) {
+    document.querySelector('textarea[name="boardJson"]').value = JSON.stringify(boardData.boards[currentBoard].boardJson, null, 2)
   }
 
   renderCaption()
