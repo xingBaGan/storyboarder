@@ -38,13 +38,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
         test: /\.less$/,
         use: [
           'style-loader',
@@ -62,6 +55,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
     ]
   },
   node: {
@@ -71,6 +72,6 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       'THREE': 'three'
-    })
+    }),
   ],
 }

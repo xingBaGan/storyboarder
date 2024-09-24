@@ -4753,8 +4753,10 @@ const resize = () => {
 window.onkeydown = (e) => {
   // 获取光标的位置是否在conception-container 中
   const conceptionContainer = document.querySelector('.conception-container')
+  const rootConception = document.querySelector('.conception-antd-modal-root')
   const isConceptionContainer = conceptionContainer?.contains(e.target)
-  if (isConceptionContainer) {
+  const isRootConception = rootConception?.contains(e.target)
+  if (isConceptionContainer || isRootConception) {
     return
   }
   // if a key is pressed which is NOT the play key ...

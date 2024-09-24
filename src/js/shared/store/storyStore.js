@@ -4,7 +4,7 @@ const thunk = require('redux-thunk').default;
 // 定义初始状态
 const initialState = {
     boardData: null,
-    isLoading: false
+    isLoading: false,
   }
   
 // 定义reducer
@@ -40,10 +40,43 @@ function rootReducer(state = initialState, action) {
       return setSceneText(state, action.payload)
     case 'SET_ALL_SCENE_TEXT':
       return setAllSceneText(state, action.payload)
+    case 'SET_PROMPT_ITEM':
+      return setPromptItem(state, action.payload)
+    case 'SET_PROMPT_LIST':
+      return {
+        ...state,
+        boardData: {
+          ...state.boardData,
+          promptList: action.payload
+        }
+      }
     default:
       return state
   }
 }
+
+function setPromptItem(state, payload) {
+  const { key, promptText, name } = payload
+  const promptList = state.boardData.promptList
+  const index = promptList.findIndex(item => item.key === key)
+  if (index !== -1) {
+    promptList[index] = {
+      ...promptList[index],
+      prompt: promptText,
+    }
+    if (name) {
+      promptList[index].name = name
+    }
+  }
+  return {
+    ...state,
+    boardData: {
+      ...state.boardData,
+      promptList: [...promptList]
+    }
+  }
+}
+
 function setSceneText(state, payload) {
   const { index, shortText } = payload
   const { boardData } = state

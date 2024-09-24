@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   background-color: #333333;
 }
@@ -6,4 +10,16 @@ div.conception-antd-drawer-body {
 }
 .conception-antd-collapse-content > .conception-antd-collapse-content-box {
   padding: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: inline-block;
+  vertical-align: middle;
 }

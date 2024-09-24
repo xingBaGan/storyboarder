@@ -10,6 +10,7 @@ const electronApp = electron.app ? electron.app : remote.app
 const userDataPath = electronApp.getPath('userData')
 import { useTranslation } from 'react-i18next'
 import './index.less'
+import './index.css'
 
 const AppContent = () => {
   const isLoading = useSelector(state => state.isLoading)

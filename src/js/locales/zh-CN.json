@@ -750,7 +750,16 @@
     "drawerTitle": "故事预设",
     "loading": "请求中，请稍候...",
     "openDrawer": "打开抽屉",
-    "bubbleTitle": "气泡吸附按钮"
+    "bubbleTitle": "气泡吸附按钮",
+    "ingredient": "prompts 要素",
+    "add": "新增",
+    "edit": "编辑",
+    "delete": "删除",
+    "name": "要素名称",
+    "prompt": "提示词",
+    "action": "操作",
+    "editPrompt": "编辑提示词",
+    "loadingPrompt": "加载中，请稍候..."
   },
   "conceptionPanel": {
     "chunk": "分镜原文",
